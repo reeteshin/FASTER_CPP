@@ -1,36 +1,40 @@
 #include<iostream>
 using namespace std;
     //     *    
-    //    * *   
-    //   *   *  
-    //  *     * 
-    // * * * * *
+    //    *-*   
+    //   *---*  
+    //  *-----* 
+    // *********
     // for n = 5
 int main(){
 
     int n = 5;
 
-    for(int i = 0;i<n;i++){
-        for(int j= 0 ;j<n-i;j++){
-            cout<<"-";
-        }
 
-        for(int j = 0;j<2*i+1;j++){
-            if(j ==0 || j==1|| j==n){
-                cout<<"*";
+    for(int i = 0 ;i<n ;i++){
+       for(int sp = 1;sp<n-i;sp++){
+        cout<<"-";
+       }
 
-            }else{
-                // cout<<"*";
-                // for(int k = 0 ;k<j-2;k++){
-                    cout<<"-";
-                // }
-                // cout<<"*";
-            }
 
+       if(i == 0||i==n-1){
+           for(int l = 0;l<2*i+1;l++){
+            cout<<"* ";
            }
-        
-        cout<<endl;
+
+       }else{
+        cout<<"*";
+        for(int sp = 0 ;sp<(2*i+1)-2;sp++){
+            cout<<"-";
+
+        }
+        cout<<"*";
+       }
+
+       cout<<endl;
     }
 
 
-}
+
+
+    }
