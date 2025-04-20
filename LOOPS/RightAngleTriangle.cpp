@@ -1,16 +1,21 @@
 #include <iostream>
 using namespace std;
+//n = 5
+// *
+// **
+// * *
+// *  *
+// *****
 
-
-void InvertedTriangel(int n){
-    for(int i = 1;i<=n;i++){
-        for(int j = 1;j<=n-i+1;j++){
-            cout<<"* ";
-        }
-        cout<<endl;
-    }
+// void InvertedTriangel(int n){
+//     for(int i = 1;i<=n;i++){
+//         for(int j = 1;j<=n-i+1;j++){
+//             cout<<"* ";
+//         }
+//         cout<<endl;
+//     }
    
-}
+// }
 
 
 void printHollowRightAngleTriangle(int n){
