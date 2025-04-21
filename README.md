@@ -11,7 +11,7 @@ where to run this file
 
 
 ```
-Basices of programmin
+Basices of programming
 Loops
 Basic math
 Array
