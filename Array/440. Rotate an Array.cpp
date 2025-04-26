@@ -3,6 +3,9 @@
 using namespace std;
 
 int main(){
+    // we can think  in terms of reverce the array
+    // one time. two time,  n - 1 time etc ..
+
     vector<int> arr = {1,2,3,4,5,6,7};
     // [5, 6, 7, 1, 2, 3, 4]
     int k = 3;
