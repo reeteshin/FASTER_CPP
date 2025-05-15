@@ -18,7 +18,7 @@ int FirstOccurrence(vector<int> arr,int n,int target){
 
         if(arr[mid] == target){
              store = mid;
-             end = mid-1;
+             end = mid-1;// FIRST OCCURRENCE KE LIYE KIS DIRECTION MAIN JANA HAI ?
         }else if(target>arr[mid]){
              start = mid+1;
         }else{
@@ -45,7 +45,7 @@ int LastOccurrence(vector<int> arr,int n,int target){
 
         if(arr[mid] == target){
              store = mid;
-             start = mid+1;
+             start = mid+1; // LAST OCCURRENCE KE LIYE KIS DIRECTION MAIN JANA HAI ?
         }else if(target>arr[mid]){
              start = mid+1;
         }else{

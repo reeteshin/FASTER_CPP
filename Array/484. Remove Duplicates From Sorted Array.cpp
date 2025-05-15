@@ -4,17 +4,30 @@
 using namespace std;
 
 int main(){
-    vector<int> arr = {1,2,3,4,5,6,7};
-    //lats do rotate an array
-    int k = 3;
-    // reverse(arr.begin(),arr.end());
-    // reverse(arr.begin()+k,arr.end());
-    // reverse(arr.begin(),arr.end()-k);
+    //jum[p] and override :)
+    vector<int> arr = {1,1,2};
 
-    // reverse(arr.begin(), arr.end());
-    // reverse(arr.begin(), arr.begin() + k);
-    // reverse(arr.begin() + k, arr.end());
-    for(int n : arr){
-        cout<<n<<" ";
+    int i =0;
+    int j = i+1;
+    int n = arr.size()-1;
+    int k = 0;
+    //we have to return the sorted array size that`s it
+    while(i!=n&& j<=n){
+        if(arr[i]==arr[j]){
+            j++;
+        }else{
+            i++;
+            arr[i] = arr[j];//if we not found any duplicate then
+            // we will inclrease the i then we will overlap the i th position
+            j++;
+        }
+        k = i;
     }
+    for(int k : arr){
+        cout<<k<<endl;
+    }
+    cout<<"K value"<< k<<endl;
+    
+
+   
 }

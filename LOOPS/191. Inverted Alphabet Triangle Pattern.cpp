@@ -10,11 +10,11 @@ using namespace std;
 int main(){
     char c = 'A';
     int n = 5;
-    cout<<~n;
-    // for(char i = 'A' ;i<='E';i++){
-    //     for(char j = i;j>'A';j--){
-    //         cout<<j;
-    //     }
-    //     cout<<endl;
-    // }
+    // cout<<~n;
+    for(int i = n; i >= 1; i--) {
+        for(char j = 'A'; j < 'A' + i; j++) {
+            cout << j;
+        }
+        cout << endl;
+    }
 }
