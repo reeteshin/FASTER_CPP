@@ -1,18 +1,11 @@
-#include<iostream>
-#include<vector>
+#include <iostream>
+#include <string>
 using namespace std;
+int main ()
+{
 
-int main(){
-  char arr[50];
-  cin.getline(arr,50);
-  int i = 0;
-  while (arr[i]!='\0')
-  {
-    if(arr[i]==' '){
-        arr[i] = 'X';
-    }
-    i++;
-  }
-  
-  cout<<arr;
+char arr[] = "HelloQuiz";
+cout << arr+5 << endl;
+return 0;
+
 }

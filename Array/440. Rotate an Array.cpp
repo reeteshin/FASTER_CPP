@@ -1,40 +1,26 @@
-#include<iostream>
-#include<vector>
+#include <iostream>
+#include <vector>
+#include <algorithm>
 using namespace std;
 
-int main(){
-    // we can think  in terms of reverce the array
-    // one time. two time,  n - 1 time etc ..
-
-    vector<int> arr = {1,2,3,4,5,6,7};
-    // [5, 6, 7, 1, 2, 3, 4]
-    int k = 3;
-    int n = arr.size();
-    k = k%n; //to avoid unnecessary rotation
-    vector<int> temp;
-
-    // cout<<n;
-    //copy last element
-    for(int i =(n-k);i<n;i++){
-        temp.push_back(arr[i]);
+void reverseD(vector<int> &nums, int start, int end)
+{
+    int i = start;
+    int j = end;
+    while (i < j)
+    {
+        swap(nums[i], nums[j]);
+        j--, i++;
     }
-    //shifting the element to right side
-
-    for(int j = n-1;j>=0;j--){
-        // cout<<arr[j]<<endl;
-        arr[j] = arr[j-k];
+}
+int main()
+{
+    vector<int> nums = {1, 2, 3, 4, 5, 6};
+    int i = 0;
+    int j = nums.size() - 1;
+    reverseD(nums, i, j);
+    for (int i : nums)
+    {
+        cout << i;
     }
-    //now copying the last element to the front
-    for(int l = 0;l<k;l++){
-        arr[l] = temp[l];
-    }
-    
-
-  
-
-    for(int p : arr){
-        cout<<p<<endl;
-    }
-
-    
 }

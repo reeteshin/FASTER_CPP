@@ -1,5 +1,6 @@
 #include<iostream>
 #include<vector>
+#include<algorithm>
 using namespace std;
 
 // Example 1:
@@ -14,50 +15,71 @@ using namespace std;
 
 
 int main(){
-    
-    vector<int> a1 {1,8};
-    vector<int> a2 = {0};
-    vector<int> ans;
-    int i = a1.size()-1;
-    int j= a2.size()-1;
-    int carry = 0;
-    while(i>=0 && j>=0){
-        
-        int addition = a1[i]+a2[j]+carry;
-        int x = addition%10;
-        carry = addition/10;
-      //  cout<<digit<<reminder<<endl;
-        ans.push_back(x);
-        
-        // cout<<addition<<endl;
-        i--;
-        j--;
-    }
 
-    while(i>=0){
-        
-        int addition = a1[i]+0+carry;
-        int x = addition%10;
-        carry = addition/10;
-      //  cout<<digit<<reminder<<endl;
-        ans.push_back(x);
-        
-        // cout<<addition<<endl;
-        i--;
-        // j--;
+
+    vector<int> a1 = {3,4,5};
+    vector<int> a2 = {7,8};
+    vector<int> ans;
+
+    int i = a1.size() - 1;
+    int j = a2.size() - 1;
+    int carry = 0;
+    while (i >= 0 || j >= 0 || carry) {
+
+      int digit1 = i >= 0 ? a1[i] : 0;
+      int digit2 = j >= 0 ? a2[j] : 0;
+      int sum = digit1 + digit2 + carry;
+      int lastDigit = sum % 10;
+      carry = sum / 10;
+      ans.push_back(lastDigit);
+      i--,j--;
     }
-    while(j>=0){
+    reverse(ans.begin(), ans.end());
+    // return ans;
+    
+    // vector<int> a1 {1,8};
+    // vector<int> a2 = {0};
+    // vector<int> ans;
+    // int i = a1.size()-1;
+    // int j= a2.size()-1;
+    // int carry = 0;
+    // while(i>=0 && j>=0){
         
-        int addition = 0+a2[j]+carry;
-        int x = addition%10;
-        carry = addition/10;
-      //  cout<<digit<<reminder<<endl;
-        ans.push_back(x);
+    //     int addition = a1[i]+a2[j]+carry;
+    //     int x = addition%10;
+    //     carry = addition/10;
+    //   //  cout<<digit<<reminder<<endl;
+    //     ans.push_back(x);
         
-        // cout<<addition<<endl;
-        // i--;
-        j--;
-    }
+    //     // cout<<addition<<endl;
+    //     i--;
+    //     j--;
+    // }
+
+    // while(i>=0){
+        
+    //     int addition = a1[i]+0+carry;
+    //     int x = addition%10;
+    //     carry = addition/10;
+    //   //  cout<<digit<<reminder<<endl;
+    //     ans.push_back(x);
+        
+    //     // cout<<addition<<endl;
+    //     i--;
+    //     // j--;
+    // }
+    // while(j>=0){
+        
+    //     int addition = 0+a2[j]+carry;
+    //     int x = addition%10;
+    //     carry = addition/10;
+    //   //  cout<<digit<<reminder<<endl;
+    //     ans.push_back(x);
+        
+    //     // cout<<addition<<endl;
+    //     // i--;
+    //     j--;
+    // }
     
     for(int k : ans){
         cout<<k<<" ";

@@ -43,9 +43,11 @@ int main() {
     int endRow = totalRows - 1;
     int endCol = totalCols - 1;
 
+    //top left bottom right
+
     int top = 0;
-    int bottom = matrix.size() - 1;
     int left = 0;
+    int bottom = matrix.size() - 1;
     int right = matrix[0].size() - 1;
 
 
@@ -54,34 +56,33 @@ int main() {
     cout << "Total Elements in Matrix: " << totalElements << endl;
 
     while(count<totalElements){
-     
-        //left to right top
-        for(int i = startCol;i<=endCol&& count<totalElements;i++){
-            cout<<matrix[startRow][i];
-            count++;
-        }
-        startRow++;
 
-        for(int i = startRow;i<=endRow&& count<totalElements;i++){
-            cout<<matrix[i][endCol];
+        for(int i = left;i<=right &&count<totalElements;i++){
             count++;
+            cout<<matrix[top][i];
         }
-        endCol--;
+        top++;
+        for(int i = top;i<=bottom&&count<totalElements;i++){
+            count++;
+            cout<<matrix[i][right];
+        }
+        right--;
 
-        for(int i = endCol;i>=startCol&& count<totalElements;i--){
-            cout<<matrix[endRow][i];
+        for(int i = right;i>=left&&count<totalElements;i--){
             count++;
+            cout<<matrix[bottom][i];
         }
-        endRow--;
+        bottom--;
 
-        for(int i = endRow;i>=startRow&& count<totalElements;i--){
-            cout<<matrix[i][startCol];
+        for(int i = bottom;i>=top&&count<totalElements;i--){
             count++;
+            cout<<matrix[i][left];
         }
-        startCol++;
+        left++;
+
 
     }
-
+    
 
 
 
