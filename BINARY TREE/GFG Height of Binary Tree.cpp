@@ -56,25 +56,40 @@ bool isBalanceTree(tnode* root){
         }
     }
 }
-void PrintTree(tnode* root){
-    if(root==nullptr)return;
-
-    cout<<root->val<<endl;
-    PrintTree(root->left);
-    PrintTree(root->right);
+void PrintTree(tnode* root,int sum){
+    if(root==nullptr)
+    {
+        return;
+    }
+    
+    sum  = sum + root->val;
+    if(root->left==NULL && root->right ==NULL){
+        cout<<"SUM--->  "<<sum<<endl;
+        sum = 0;
+        return;
+    }
+    
+    
+    // cout<<"ROOT val"<<sum<<endl;
+    // cout<<root->val<<endl;
+    PrintTree(root->left,sum);
+    PrintTree(root->right,sum);
+    //  cout<<"ROOT RIGHT"<<root->val<<endl;
 }
 
 int main(){
 
 
-   vector<int> a = {  1, 2,-1,-1, 3,4,-1,-1,5,-1,-1};
-
+//    vector<int> a = {  1, 2,-1,-1, 3,4,-1,-1,5,-1,-1};
+   vector<int> a = { 1,2,3,4,5};
    int i = 0;
    tnode* root = buildTree(a,i);
+   int sum = 0 ;
+   PrintTree( root,sum);
 
-   PrintTree( root);
+   cout<<"FINAL SUM"<<sum<<endl;
 
-   cout<<heightOfBinaryTree(root)<<endl;
+//    cout<<heightOfBinaryTree(root)<<endl;
   
 
 

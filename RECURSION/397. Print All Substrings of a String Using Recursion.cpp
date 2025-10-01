@@ -17,12 +17,5 @@ void printSquare(int row, int n) {
 }
 
 int main() {
-    // int n = 5;
-    // printSquare(0, n);
-    // return 0;
-
-char str[] = "Hello World";
-cout << str[0];
-return 0;
-
+    
 }
